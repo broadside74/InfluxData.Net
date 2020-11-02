@@ -29,5 +29,10 @@
         /// RP replication copies.
         /// </summary>
         public bool Default { get; set; }
+
+        public override string ToString()
+        {
+            return $@"{Name} (Duration : {Duration} - Shard : {ShardGroupDuration} - RP Replications Copies : {ReplicationCopies})";
+        }
     }
 }
