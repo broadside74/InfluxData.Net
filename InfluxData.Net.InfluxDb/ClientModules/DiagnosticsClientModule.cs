@@ -24,7 +24,7 @@ namespace InfluxData.Net.InfluxDb.ClientModules
         public virtual async Task<Pong> PingAsync()
         {
             var watch = Stopwatch.StartNew();
-            var response = await base.RequestClient.RequestAsync(HttpMethod.Get, RequestPaths.Ping, includeAuthToQuery: false, headerIsBody: true).ConfigureAwait(false);
+            var response = await base.RequestClient.RequestAsync(HttpMethod.Get, RequestPaths.Ping);
 
             watch.Stop();
 
