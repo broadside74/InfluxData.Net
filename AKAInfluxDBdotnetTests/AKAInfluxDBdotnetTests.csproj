@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D6EBFD4-2022-41DF-BBB2-8C83FDB9E37A}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AKAInfluxDBdotnetTests</RootNamespace>
+    <AssemblyName>AKAInfluxDBdotnetTests</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Net.Http.4.3.2\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
+      <HintPath>..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.assert, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
+      <HintPath>..\packages\xunit.assert.2.1.0\lib\dotnet\xunit.assert.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
+      <HintPath>..\packages\xunit.extensibility.core.2.1.0\lib\dotnet\xunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.execution.desktop, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
+      <HintPath>..\packages\xunit.extensibility.execution.2.1.0\lib\net45\xunit.execution.desktop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InfluxDataNetConnectorTestSuite\InfluxDataNetConnectorTests.cs" />
+    <Compile Include="InfluxDataNetConnectorTestSuite\InfluxDataNetConnectorWithLibDll\InfluxDataNetConnectorWIthDllTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AKAInfluxDBdotnet\AKAInfluxDBdotnet.csproj">
+      <Project>{9fce2dbd-e8c8-4f89-b227-2e90cc8293d8}</Project>
+      <Name>AKAInfluxDBdotnet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InfluxData.Net.Common\InfluxData.Net.Common.csproj">
+      <Project>{62d1a686-8ed2-4b70-8842-27f9145aef4b}</Project>
+      <Name>InfluxData.Net.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InfluxData.Net.InfluxDb\InfluxData.Net.InfluxDb.csproj">
+      <Project>{e1cbc2fd-4fe1-4f18-9395-739718d5f581}</Project>
+      <Name>InfluxData.Net.InfluxDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InfluxData.Net\InfluxData.Net.csproj">
+      <Project>{2daefd4b-3972-4fce-87ce-01d74f445018}</Project>
+      <Name>InfluxData.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
