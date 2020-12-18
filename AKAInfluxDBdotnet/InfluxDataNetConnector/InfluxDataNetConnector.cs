@@ -9,6 +9,7 @@ using AKAInfluxDBdotnet.InfluxDataNetConnector.Services.Write;
 using InfluxData.Net.Common.Enums;
 using InfluxData.Net.InfluxDb;
 using InfluxData.Net.InfluxDb.Models;
+using InfluxData.Net.InfluxDb.Models.Responses;
 
 namespace AKAInfluxDBdotnet.InfluxDataNetConnector
 {
@@ -81,11 +82,20 @@ namespace AKAInfluxDBdotnet.InfluxDataNetConnector
             Name = name;
         }
 
-        
+        public InfluxDataNetConnector Clone()
+        {
+            return new InfluxDataNetConnector(Url, Username, Password,Database, AllowDbCreation, Name);
+        }
+
         public async Task<bool> Ping()
         {
             Task task = DbClient.Diagnostics.PingAsync();
             return await Task.WhenAny(task, Task.Delay(1000)) == task;
+        }
+
+        public Task<Pong> PingDb()
+        {
+            return DbClient.Diagnostics.PingAsync();
         }
 
         public DiagnosticsInflux GetDiagnostics()
@@ -114,7 +124,12 @@ namespace AKAInfluxDBdotnet.InfluxDataNetConnector
         /**
          * Write multiple InfluxDataPoints
          */
-        public bool WriteInfluxDataPoint(IEnumerable<InfluxDataPoint> points)
+        public Task<bool> WriteInfluxDataPoint(IEnumerable<InfluxDataPoint> points)
+        {
+            return _writeAsyncApi.Write(points, Database, RetentionPolicy);
+        }
+        
+        public bool WriteInfluxDataPoints(IEnumerable<InfluxDataPoint> points)
         {
             return _writeAsyncApi.Write(points, Database, RetentionPolicy).Result;
         }

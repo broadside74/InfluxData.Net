@@ -119,7 +119,7 @@ namespace AKAInfluxDBdotnetTests.InfluxDataNetConnectorTestSuite
 
             var result = _measureTime.Measure(() => _influxDataNetConnector.WriteInfluxDataPoint(points),
                 str => _testOutputHelper.WriteLine(str));
-            Assert.True(result);
+            Assert.True(result.Result);
         }
 
         [Fact]
